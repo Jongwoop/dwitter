@@ -1,4 +1,4 @@
-import * as tweetRepository from '../data/tweet.js';
+import * as tweetRepository from "../data/tweet.js";
 
 export async function getTweets(req, res) {
   const username = req.query.username;

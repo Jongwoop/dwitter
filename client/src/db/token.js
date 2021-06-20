@@ -1,4 +1,4 @@
-const TOKEN = 'token';
+const TOKEN = "token";
 
 export default class TokenStorage {
   saveToken(token) {

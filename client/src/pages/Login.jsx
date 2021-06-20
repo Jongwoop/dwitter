@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Banner from '../components/Banner';
+import React, { useState } from "react";
+import Banner from "../components/Banner";
 
 const Login = ({ onSignUp, onLogin }) => {
   const [signup, setSignup] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [url, setURL] = useState('');
-  const [text, setText] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [url, setURL] = useState("");
+  const [text, setText] = useState("");
   const [isAlert, setIsAlert] = useState(false);
 
   const onSubmit = (event) => {
@@ -30,17 +30,17 @@ const Login = ({ onSignUp, onLogin }) => {
       target: { name, value, checked },
     } = event;
     switch (name) {
-      case 'username':
+      case "username":
         return setUsername(value);
-      case 'password':
+      case "password":
         return setPassword(value);
-      case 'name':
+      case "name":
         return setName(value);
-      case 'email':
+      case "email":
         return setEmail(value);
-      case 'url':
+      case "url":
         return setURL(value);
-      case 'signup':
+      case "signup":
         return setSignup(checked);
       default:
     }
@@ -49,68 +49,68 @@ const Login = ({ onSignUp, onLogin }) => {
   return (
     <>
       <Banner text={text} isAlert={isAlert} />
-      <form className='auth-form' onSubmit={onSubmit}>
+      <form className="auth-form" onSubmit={onSubmit}>
         <input
-          name='username'
-          type='text'
-          placeholder='Id'
+          name="username"
+          type="text"
+          placeholder="Id"
           value={username}
           onChange={onChange}
-          className='form-input'
+          className="form-input"
           required
         />
         <input
-          name='password'
-          type='password'
-          placeholder='Password'
+          name="password"
+          type="password"
+          placeholder="Password"
           value={password}
-          className='form-input'
+          className="form-input"
           onChange={onChange}
         />
         {signup && (
           <input
-            name='name'
-            type='text'
-            placeholder='Name'
+            name="name"
+            type="text"
+            placeholder="Name"
             value={name}
             onChange={onChange}
-            className='form-input'
+            className="form-input"
             required
           />
         )}
         {signup && (
           <input
-            name='email'
-            type='email'
-            placeholder='Email'
+            name="email"
+            type="email"
+            placeholder="Email"
             value={email}
             onChange={onChange}
-            className='form-input'
+            className="form-input"
             required
           />
         )}
         {signup && (
           <input
-            name='url'
-            type='url'
-            placeholder='Profile Image URL'
+            name="url"
+            type="url"
+            placeholder="Profile Image URL"
             value={url}
             onChange={onChange}
-            className='form-input'
+            className="form-input"
           />
         )}
-        <div className='form-signup'>
+        <div className="form-signup">
           <input
-            name='signup'
-            id='signup'
-            type='checkbox'
+            name="signup"
+            id="signup"
+            type="checkbox"
             onChange={onChange}
             checked={signup}
           />
-          <label htmlFor='signup'> Create a new account?</label>
+          <label htmlFor="signup"> Create a new account?</label>
         </div>
-        <button className='form-btn auth-form-btn' type='submit'>
-          {signup ? 'Sign Up' : 'Sign In'}
+        <button className="form-btn auth-form-btn" type="submit">
+          {signup ? "Sign Up" : "Sign In"}
         </button>
       </form>
     </>
