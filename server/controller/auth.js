@@ -5,9 +5,6 @@ import * as userRepository from "../data/auth.js";
 import { config } from "../config.js";
 
 // TODO: Make it secure!
-const jwtSecretKey = "F2dN7x8HVzBWaQuEEDnhsvHXRWqAR63z";
-const jwtExpiresInDays = "2d";
-const bcryptSaltRounds = 12;
 
 export async function signup(req, res) {
   const { username, password, name, email, url } = req.body;
